@@ -40,6 +40,8 @@ excursium_tests/
 - New user registration
 - Filters on the excursions page
 
+  Known limitation: the site has anti-bot protection that may occasionally interrupt automated test runs with a "suspicious activity" verification page. If a test fails unexpectedly, try re-running it.
+
 ## 🔗 Site
 
 [excursium.com](https://excursium.com/)
