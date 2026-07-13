@@ -1,6 +1,13 @@
+import os
+from dotenv import load_dotenv
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+
+load_dotenv()
+
+TEST_EMAIL = os.environ.get("TEST_EMAIL")
+TEST_PASSWORD = os.environ.get("TEST_PASSWORD")
 
 BASE_URL = "https://excursium.com/Client/Login"
 
@@ -15,10 +22,10 @@ class TestAuth:
         login_tab.click()
         email = wait.until(EC.presence_of_element_located(
             (By.XPATH, "//input[@placeholder='Ваша электронная почта']")))
-        email.send_keys("doorgaliyo@gmail.com")
+        email.send_keys(TEST_EMAIL)
         password = driver.find_element(
             By.XPATH, "//input[@placeholder='Ваш пароль']")
-        password.send_keys("sdkgjjskfghj")
+        password.send_keys(TEST_PASSWORD)
         driver.find_element(By.ID, "login-btn").click()
         # Fixed URL check — after login the page redirects to Startup or cabinet
         wait.until(EC.url_contains(("Startup" or "cabinet")))
@@ -33,7 +40,7 @@ class TestAuth:
         login_tab.click()
         email = wait.until(EC.presence_of_element_located(
             (By.XPATH, "//input[@placeholder='Ваша электронная почта']")))
-        email.send_keys("doorgaliyo@gmail.com")
+        email.send_keys(TEST_EMAIL)
         password = driver.find_element(
             By.XPATH, "//input[@placeholder='Ваш пароль']")
         password.send_keys("wrong_password123")
