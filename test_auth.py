@@ -28,7 +28,7 @@ class TestAuth:
         password.send_keys(TEST_PASSWORD)
         driver.find_element(By.ID, "login-btn").click()
         # Fixed URL check — after login the page redirects to Startup or cabinet
-        wait.until(EC.url_contains(("Startup" or "cabinet")))
+        wait.until(lambda d: "Startup" in d.current_url or "cabinet" in d.current_url)
         assert "Startup" in driver.current_url or "cabinet" in driver.current_url
 
     def test_wrong_password(self, driver):
