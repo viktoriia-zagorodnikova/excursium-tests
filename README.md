@@ -1,29 +1,45 @@
-# Автотесты для сайта Excursium
+# 🎟️ Automated Tests for Excursium
 
-## Описание
-Проект автоматизированного тестирования фронт-сайта магазина экскурсий Excursium.
+**Tech stack:** Python · Selenium WebDriver · Pytest
 
-## Стек технологий
-- Python — язык программирования
-- Pytest — фреймворк для запуска тестов
-- Selenium WebDriver — инструмент для автоматизации браузера
+> ⚠️ **Note:** This is a personal pet project built to practice test automation skills. It is not affiliated with or endorsed by Excursium.
 
-## Почему именно эти инструменты
-- **Selenium** выбран для автоматизации браузера Chrome так как позволяет имитировать действия реального пользователя — клики, ввод текста, навигацию
-- **Pytest** выбран как фреймворк для организации и запуска тестов — удобная структура, понятные отчёты
-- **Python** выбран как основной язык — простой синтаксис, хорошая поддержка Selenium и Pytest
+## 📋 Project Description
 
-## Структура проекта
-- `conftest.py` — настройка и teardown драйвера
-- `tests/test_auth.py` — тесты авторизации (EX-001, EX-002)
-- `tests/test_register.py` — тесты регистрации (EX-009, EX-013)
-- `tests/test_filter.py` — тесты фильтрации (EX-014, EX-017)
-- `requirements.txt` — список зависимостей
+Automated test suite for the Excursium excursion booking website front-end (https://excursium.com/).
 
-## Что тестируется
-- Авторизация по email и паролю
-- Регистрация нового пользователя
-- Работа фильтров на странице экскурсий
+## 🛠 Tech Stack
 
-## Сайт
-https://excursium.com/
+| Tool | Purpose |
+|---|---|
+| Python | Programming language |
+| Pytest | Test framework for running and organizing tests |
+| Selenium WebDriver | Browser automation |
+
+## 🤔 Why These Tools
+
+- **Selenium** was chosen for Chrome browser automation — it simulates real user actions such as clicks, text input, and navigation.
+- **Pytest** was chosen for organizing and running tests — clean structure, readable reports.
+- **Python** was chosen as the main language — simple syntax, strong support for Selenium and Pytest.
+
+## 🗂 Project Structure
+
+```
+excursium_tests/
+├── conftest.py             # driver setup and teardown
+├── tests/
+│   ├── test_auth.py        # login tests (EX-001, EX-002)
+│   ├── test_register.py    # registration tests (EX-009, EX-013)
+│   └── test_filter.py      # filtering tests (EX-014, EX-017)
+└── requirements.txt        # dependencies
+```
+
+## ✅ What's Covered
+
+- Login with email and password
+- New user registration
+- Filters on the excursions page
+
+## 🔗 Site
+
+[excursium.com](https://excursium.com/)
